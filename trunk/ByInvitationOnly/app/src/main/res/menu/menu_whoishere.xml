@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="pt.ipleria.estg.es2.espr.byinvitationonly.whoishereActivity">
+    <item
+        android:id="@+id/action_i_m_here"
+        android:icon="@drawable/ic_action_group"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_i_m_here" />
+</menu>

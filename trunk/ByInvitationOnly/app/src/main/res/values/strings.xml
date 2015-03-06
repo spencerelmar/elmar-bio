@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">By Invitation Only</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_i_m_here">i_m_here</string>
+    <string name="title_activity_whoishere">whoishereActivity</string>
+</resources>
