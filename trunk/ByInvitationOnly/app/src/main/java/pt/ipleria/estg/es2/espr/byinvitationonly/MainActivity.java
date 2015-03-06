@@ -1,19 +1,32 @@
 package pt.ipleria.estg.es2.espr.byinvitationonly;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import pt.ipleria.estg.es2.espr.byinvitationonly.modelo.Contacto;
 
 
 public class MainActivity extends Activity {
     private boolean isChecked = false;
+    private Contacto contacto;
+    private MenuItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //obterContactoUtilizador();
+    }
+
+    private void obterContactoUtilizador() {
+        contacto = new Contacto("Elmar", "spencerelmar@gmail.com");
     }
 
 
@@ -40,15 +53,35 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void invertCheckin(MenuItem item) {
-        isChecked = !isChecked;
-        item.setIcon(isChecked ? R.drawable.ic_action_group : R.drawable.ic_action_alone);
+    private void invertCheckin(final MenuItem item) {
 
-        if (isChecked) {
-            Intent intent = new Intent(this, whoishereActivity.class);
-            intent.putExtra(whoishereActivity.is_Checked_IN, isChecked);
-            startActivity(intent);
+        if (isChecked == false) {
+            if (this.contacto != null && !contacto.getEmail().isEmpty() && !contacto.getNome().isEmpty()) {
+                AlertDialog.Builder construtor = new AlertDialog.Builder(this);
 
+                construtor.setTitle("Confirmação").setMessage("Tem a certeza que pretende partilhar os dados:\n" + "Nome: " +
+                        contacto.getNome() + "E-Mail: " + contacto.getEmail()).setNegativeButton("Não", null)
+                        .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                isChecked = true;
+                                item.setIcon(R.drawable.ic_action_group);
+
+                                Intent intent = new Intent(getApplicationContext(), whoishereActivity.class);
+                                intent.putExtra(whoishereActivity.is_Checked_IN, isChecked);
+                                startActivity(intent);
+                            }
+                        });
+                construtor.create().show();
+
+            } else {
+                Toast.makeText(this, "Dados incompletos!", Toast.LENGTH_SHORT).show();
+
+            }
+
+        } else {
+            isChecked = false;
+            item.setIcon(R.drawable.ic_action_alone);
         }
     }
 }
