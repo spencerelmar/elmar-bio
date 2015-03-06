@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //obterContactoUtilizador();
+        obterContactoUtilizador();
     }
 
     private void obterContactoUtilizador() {
@@ -64,12 +64,17 @@ public class MainActivity extends Activity {
                         .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                isChecked = true;
-                                item.setIcon(R.drawable.ic_action_group);
+                                if (temRede()) {
+                                    isChecked = true;
+                                    item.setIcon(R.drawable.ic_action_group);
 
-                                Intent intent = new Intent(getApplicationContext(), whoishereActivity.class);
-                                intent.putExtra(whoishereActivity.is_Checked_IN, isChecked);
-                                startActivity(intent);
+                                    Intent intent = new Intent(getApplicationContext(), whoishereActivity.class);
+                                    intent.putExtra(whoishereActivity.is_Checked_IN, isChecked);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(MainActivity.this, "Não ha rede, tente novamente", Toast
+                                            .LENGTH_LONG);
+                                }
                             }
                         });
                 construtor.create().show();
@@ -83,5 +88,11 @@ public class MainActivity extends Activity {
             isChecked = false;
             item.setIcon(R.drawable.ic_action_alone);
         }
+    }
+
+    private boolean temRede() {
+
+        //conectivity management pesquisar
+        return true;
     }
 }

@@ -24,8 +24,6 @@ public class whoishereActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_whoishere, menu);
-
-
         menu.findItem(R.id.action_i_m_here).setIcon(isChecked ? R.drawable.ic_action_group : R.drawable.ic_action_alone);
 
         return true;
