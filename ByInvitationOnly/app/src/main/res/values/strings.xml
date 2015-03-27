@@ -5,4 +5,20 @@
     <string name="action_settings">Settings</string>
     <string name="action_i_m_here">i_m_here</string>
     <string name="title_activity_whoishere">whoishereActivity</string>
+    <string name="confirmacao">Confirmação</string>
+    <string name="nao">Não</string>
+    <string name="sim">Sim</string>
+    <string name="dados_incompletos">Dados incompletos!</string>
+    <string name="rede_desativo">Não ha rede, tente novamente</string>
+    <string name="email">"E-Mail: "</string>
+    <string name="nome">"Nome: "</string>
+    <string name="pref_key_name">name</string>
+    <string name="pref_key_email">email</string>
+    <string name="messagem_completar_dados">os dados do utilizador do contacto estão incompletos\nDeseja completalos</string>
+    <string name="title_activity_contact_settings">ContactSettingsActivity</string>
+    <string name="introduzir_nome_completo">Introduza o seu nome completo</string>
+    <string name="introduza_o_email">Introduza o seu email</string>
+    <string name="erro">Erro</string>
+    <string name="sem_rede">Sem Rede</string>
+    <string name="ok">Ok</string>
 </resources>

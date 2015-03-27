@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <pt.ipleria.estg.es2.espr.byinvitationonly.MyEditTextPreference
+        android:defaultValue=""
+        android:key="@string/pref_key_name"
+        android:summary="@string/introduzir_nome_completo"
+        android:title="@string/nome" />
+    <pt.ipleria.estg.es2.espr.byinvitationonly.MyEditTextPreference
+        android:defaultValue=""
+        android:key="@string/pref_key_email"
+        android:summary="@string/introduza_o_email"
+        android:title="@string/email" />
+</PreferenceScreen>

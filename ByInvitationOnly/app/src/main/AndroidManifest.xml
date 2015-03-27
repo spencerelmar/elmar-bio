@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.ipleria.estg.es2.espr.byinvitationonly">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    //para a net funcionar
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    //alterar o estado na rede
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    //para a net 3G
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,6 +31,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pt.ipleria.estg.es2.espr.byinvitationonly.MainActivity" />
         </activity>
+        <activity
+            android:name=".ContactSettingsActivity"
+            android:label="@string/title_activity_contact_settings"></activity>
     </application>
 
 </manifest>
