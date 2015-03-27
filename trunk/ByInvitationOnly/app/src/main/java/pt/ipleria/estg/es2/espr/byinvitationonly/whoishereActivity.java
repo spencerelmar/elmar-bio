@@ -36,7 +36,7 @@ public class whoishereActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        //noinspe tion SimplifiableIfStatement
         if (id == R.id.action_i_m_here) {
             return true;
         }
