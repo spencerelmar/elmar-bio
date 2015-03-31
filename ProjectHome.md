@@ -1,0 +1,1 @@
+Este projeto visa criar uma aplicação android para efetuar o check in em varias conferencias cientificas.
